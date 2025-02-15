@@ -3,14 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { StudentformModule } from './studentform/studentform.module';
+import { StudentformMainformComponent } from './studentform/studentform-mainform/studentform-mainform.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    StudentformMainformComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
