@@ -3,13 +3,13 @@
       <li ngbNavItem class="nav-item">
         <a ngbNavLink class="nav-link tab-1">Form1</a>
         <ng-template ngbNavContent>
-          <app-studentform-form1></app-studentform-form1>
+          <app-studentform-form1 [formGroup]="form1" (formValueChange)="onPart1FormChange($event)"></app-studentform-form1>
         </ng-template>
       </li>
       <li ngbNavItem class="nav-item">
         <a ngbNavLink class="nav-link tab-2">Form2</a>
         <ng-template ngbNavContent>
-          <app-studentform-form2></app-studentform-form2>
+          <app-studentform-form2 [formGroup]="form2" (formValueChange)="onPart2FormChange($event)"></app-studentform-form2>
         </ng-template>
       </li>
     </ul>
