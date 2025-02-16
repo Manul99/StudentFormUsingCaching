@@ -1,1 +1,17 @@
-<p>studentform-mainform works!</p>
+<div class="row overflow-hidden">
+    <ul ngbNav #nav="ngbNav" class="nav nav-tabs active shadow-lg bg-dhformheading rounded-0">
+      <li ngbNavItem class="nav-item">
+        <a ngbNavLink class="nav-link tab-1">Form1</a>
+        <ng-template ngbNavContent>
+          <app-studentform-form1></app-studentform-form1>
+        </ng-template>
+      </li>
+      <li ngbNavItem class="nav-item">
+        <a ngbNavLink class="nav-link tab-2">Form2</a>
+        <ng-template ngbNavContent>
+          <app-studentform-form2></app-studentform-form2>
+        </ng-template>
+      </li>
+    </ul>
+  </div>
+  <div [ngbNavOutlet]="nav"></div>
