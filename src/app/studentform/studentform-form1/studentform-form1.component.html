@@ -1,1 +1,238 @@
-<p>studentform-form1 works!</p>
+<div class="container-fuild">
+  <div class="row">
+    <div class="form-container p-4 shadow-lg "style="background-color: #f7f8ff">
+      <form [formGroup]="form1">
+        <div class="row">
+          <label
+            for="group"
+            class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label col-form-label-md text-black fw-800 mb-3 label-custom-width"
+          >
+            First Name</label
+          >
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <input
+              type="text"
+              class="form-control form-control-md focus-ring"
+              id="serial"
+              placeholder=""
+              formControlName="Fname"
+              tabindex="1"
+            />
+          </div>
+          <div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2"></div>
+          <label
+            for="group"
+            class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label col-form-label-md text-black fw-800 mb-3 label-custom-width"
+          >
+            Last Name</label
+          >
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <input
+              type="text"
+              class="form-control form-control-md focus-ring"
+              id="serial"
+              placeholder=""
+              formControlName="lName"
+              tabindex="1"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <label
+            for="assettype"
+            class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label col-form-label-md text-black fw-800 mb-3 label-custom-width"
+          >
+            Father's Name</label
+          >
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <input
+              type="text"
+              class="form-control form-control-md focus-ring"
+              id="serial"
+              placeholder=""
+              formControlName="fatherName"
+              tabindex="1"
+            />
+          </div>
+
+          <div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2"></div>
+
+          <label
+            for="assetsubtype"
+            class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label col-form-label-md text-black fw-800 mb-3 label-custom-width"
+          >
+            Mother's Name</label
+          >
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <input
+              type="text"
+              class="form-control form-control-md focus-ring"
+              id="serial"
+              placeholder=""
+              formControlName="MotherName"
+              tabindex="1"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <label
+            for="asset"
+            class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label col-form-label-md text-black fw-800 mb-3 label-custom-width"
+          >
+            Date of Birth</label
+          >
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <input
+              type="date"
+              class="form-control form-control-md focus-ring"
+              id="commencedDate"
+              placeholder=""
+              formControlName="dob"
+              tabindex="1"
+              (change)="onDateChangeCommencing($event)"
+              [ngClass]="{
+                'is-invalid':
+                  form1.get('commencedDate')?.invalid &&
+                  f['commencedDate'].touched &&
+                  f['commencedDate'].errors
+              }"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <label
+            for="itemcode"
+            class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label col-form-label-md text-black fw-800 mb-3 label-custom-width"
+          >
+            Address</label
+          >
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <input
+              type="text"
+              class="form-control form-control-md focus-ring"
+              id="itemCode"
+              placeholder=""
+              formControlName="address"
+              tabindex="1"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <label
+            for="serialID"
+            class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label col-form-label-md text-black fw-800 mb-3 label-custom-width"
+          >
+            Mobile Number</label
+          >
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <input
+              type="text"
+              class="form-control form-control-md focus-ring"
+              id="serial"
+              placeholder=""
+              formControlName="mNumber"
+              tabindex="1"
+            />
+          </div>
+
+          <div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2"></div>
+
+          <label
+            for="barcode"
+            class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label col-form-label-md text-black fw-800 mb-3 label-custom-width"
+          >
+            Email</label
+          >
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <input
+              type="text"
+              class="form-control form-control-md focus-ring"
+              id="barcode"
+              placeholder=""
+              formControlName="email"
+              tabindex="1"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <label
+            for="maincategory"
+            class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label col-form-label-md text-black fw-800 mb-3 label-custom-width"
+          >
+            Father's Mobile Number</label
+          >
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <input
+              type="text"
+              class="form-control form-control-md focus-ring"
+              id="mainCategoryName"
+              placeholder=""
+              formControlName="faNumber"
+              tabindex="1"
+            />
+          </div>
+
+          <div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2"></div>
+
+          <label
+            for="subcategory"
+            class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label col-form-label-md text-black fw-800 mb-3 label-custom-width"
+          >
+            Mother's Mobile Number</label
+          >
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <input
+              type="text"
+              class="form-control form-control-md focus-ring"
+              id="subCategoryName"
+              placeholder=""
+              formControlName="moNumber"
+              tabindex="1"
+            />
+          </div>
+        </div>
+
+        <div class="row">
+          <label
+            for="brand"
+            class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label col-form-label-md text-black fw-800 mb-3 label-custom-width"
+          >
+            PostID</label
+          >
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <input
+              type="text"
+              class="form-control form-control-md focus-ring"
+              id="brandName"
+              placeholder=""
+              formControlName="postID"
+              tabindex="1"
+            />
+          </div>
+          <div class="col-xxl-1 col-xl-1 col-lg-2 col-md-2 col-sm-2"></div>
+          <label
+            for="model"
+            class="col-xxl-2 col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label col-form-label-md text-black fw-800 mb-3 label-custom-width"
+          >
+            Age</label
+          >
+          <div class="col-xxl-3 col-xl-3 col-lg-3 col-md-3 col-sm-3">
+            <input
+              type="text"
+              class="form-control form-control-md focus-ring"
+              id="modelName"
+              placeholder=""
+              formControlName="age"
+              tabindex="1"
+            />
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
