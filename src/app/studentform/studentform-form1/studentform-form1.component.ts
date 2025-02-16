@@ -20,7 +20,8 @@ export class StudentformForm1Component implements OnInit{
   }
   ngOnInit(): void {
   
-    this.initFormGroup()
+    this.initFormGroup();
+    this.getValuChanges();
   }
 
   initFormGroup() {
@@ -50,6 +51,12 @@ export class StudentformForm1Component implements OnInit{
       this.formattedDate = formatted;
       this.form1.get("commencedDate")?.setValue(formatted);
     }
+  }
+
+  getValuChanges(){
+    this.form1.valueChanges.subscribe((value) => {
+      this.formValueChange.emit(value);
+    })
   }
 
   get f() {

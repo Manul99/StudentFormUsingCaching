@@ -22,7 +22,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  exports: [   // ✅ Export so AppModule can use it
+  exports: [   
     StudentformMainformComponent
   ]
 })

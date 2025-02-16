@@ -11,47 +11,39 @@ export class StudentformForm2Component implements OnInit {
 
   @Input() form2!: FormGroup;
   @Output() formValuChange = new EventEmitter<any>();
-  formattedDate: string | null = null;
-  selectedItem: any;
-
-  subjects = [
-    { subjectsId: 1, name: "Science" },
-    { subjectsId: 2, name: "Maths" },
-    { subjectsId: 3, name: "IT" },
-  ];
-
-  sports = [
-    { sportsId: 1, name: "Cricket" },
-    { sportsId: 2, name: "Rugby" },
-    { sportsId: 3, name: "Football" },
-  ];
+  
   constructor(
     private formBuilder: UntypedFormBuilder,
   ){
 
   }
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
-    this.initFormGroup()
+   
+    this.form2 = this.formBuilder.group({
+      fSubject: ["",Validators.required],
+      fHobby: ["", Validators.required],
+      fSport: ["", Validators.required],
+      fBook: ["", Validators.required],   
+      fOccupation: ["", Validators.required],
+      mOccupation: ["", Validators.required],
+    });
+    this.getValuChanges();
+    
   }
-   initFormGroup() {
-      this.form2 = this.formBuilder.group({
-        subjectsId: ["", Validators.required],
-        fHobby: ["", Validators.required],
-        sportsId: ["",Validators.required],
-        fBook: [""],
-        fOccupation: ["", Validators.required],
-        mOccupation: [""],
-       
-      });
-  
-     
-    }
 
+
+
+
+//This function initializes a form group with the formBuilder
+
+    getValuChanges(){
+      this.form2.valueChanges.subscribe((value) => {
+        this.formValuChange.emit(value);
+      })
+    }
 
     
       get f() {
-        return this.form2.controls;
+        return this.form2?.controls;
       }
 }
